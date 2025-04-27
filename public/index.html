@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="icons/code.png" type="image/png">
   <title>Devotol</title>
   <style>
     :root {
@@ -55,8 +56,8 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1.5rem;
-      margin-top: 4rem;
-      padding-bottom: 4rem;
+      margin-top: 64px;
+      padding-bottom: 64px;
     }
     .card {
       background-color: var(--dark-grey);
@@ -108,6 +109,21 @@
       color: #0a0a0a;
     }
 
+    @media (max-width: 768px) {
+      body {
+        background-size:950px;
+      }
+      .hero h1 {
+        font-size:54px ;
+      }
+      .hero p {
+        font-size: 20px;
+      }
+      .hero {
+        margin-bottom: 190px ;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -121,42 +137,42 @@
     </section>
     <section class="cards">
       <div class="card">
-        <a href="/cronjob.html">
+        <a href="/public/cronjob-builder.html">
           <img src="icons/job-seeker.png" alt="image" width="50" height="50">
           <h3>Cronjob Command</h3>
           <p>Generate and validate cron schedule expressions quickly.</p>
         </a>
       </div>
       <div class="card">
-        <a href="/java-syntax.html">
+        <a href="/public/syntax-helper.html">
           <img src="icons/analysis.png" alt="image" width="50" height="50">
           <h3>Language Syntax Check</h3>
           <p>Resolve progamming langiage syntax issues and get code snippets instantly.</p>
         </a>
       </div>
       <div class="card">
-        <a href="/cpp-syntax.html">
+        <a href="/public/method-details.html">
           <img src="icons/iteration.png" alt="image" width="50" height="50">
           <h3>Quick method details</h3>
           <p>Learn about methods, params and return types to implement them ASAP.</p>
         </a>
       </div>
       <div class="card">
-        <a href="/python-syntax.html">
+        <a href="/public/language-check.html">
           <img src="icons/code.png" alt="image" width="50" height="50">
           <h3>Language Check</h3>
           <p>Quickly check what progamming language this code snippet is written in.</p>
         </a>
       </div>
       <div class="card">
-        <a href="/object-details.html">
+        <a href="/public/object-details.html">
           <img src="icons/3d-modeling.png" alt="image" width="50" height="50">
           <h3>Object Details</h3>
           <p>Fetch detailed info about any object in your chosen language.</p>
         </a>
       </div>
       <div class="card">
-        <a href="/markdown-preview.html">
+        <a href="/public/markdown-preview.html">
           <img src="icons/markdown.png" alt="image" width="50" height="50">
           <h3>Markdown Preview</h3>
           <p>Instantly render Markdown with live preview.</p>
@@ -169,10 +185,23 @@
 
   const button = document.querySelector(".scrollBtn");
   button.addEventListener("click", (e) => {
-    window.scrollTo({
-      top: document.body.scrollHeight, // Scroll to the bottom of the page
-      behavior: "smooth" // Optional: adds a smooth scrolling effect
-    });
+
+    if (window.innerWidth < 500) {
+
+      window.scrollTo({
+        top: window.scrollY + 860, // Scroll 860px down from the current position
+        behavior: "smooth" // Optional: adds a smooth scrolling effect
+      });
+
+    } else {
+
+      window.scrollTo({
+        top: document.body.scrollHeight, // Scroll to the bottom of the page
+        behavior: "smooth" // Optional: adds a smooth scrolling effect
+      });
+
+    }
+    
   })
 
   

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Devotol - Cronjob Builder</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <style>
+    body {
+      background-image: url(icons/inverted-bg.svg);
+      background-size: 1500px;
+      /* background-color: #000; */
+      color: #ccc;
+      font-family: monospace, Seoge UI;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      display: flex;
+      width: 100%;
+      margin-left: 50px;
+      margin-top: 200px;
+      margin-right: 50px;
+      background-image: linear-gradient(to right, #250f0f, #1a0d13);
+      padding: 32px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+      gap: 40px;
+    }
+
+    .left,
+    .right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    textarea {
+      flex: 1;
+      padding: 1rem;
+      font-size: 1.1rem;
+      background-color: #2c2c2c;
+      color: #fff;
+      border: 2px solid #555;
+      border-radius: 8px;
+      resize: none;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    textarea:focus {
+      border-color: #ff851b;
+    }
+
+    button {
+      margin-top: 1rem;
+      padding: 0.8rem;
+      background-color: #ff851b;
+      color: #000;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff7700;
+    }
+
+    .output-box {
+      flex: 1;
+      padding: 1rem;
+      background-color: #2c2c2c;
+      border: 2px solid #555;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 1.1rem;
+      min-height: 200px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        margin-top: 50px;
+      }
+
+      .left,
+      .right {
+        flex: none;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .output-box {
+        min-height: 150px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="left">
+      <textarea placeholder="Enter your input here..."></textarea>
+      <button>Submit</button>
+    </div>
+
+    <div class="right">
+      <textarea readonly id="" class="output-box">
+        ax-width: 768px: This media query will trigger when the screen width is 768px or less (which is common for tablets and mobile devices).
+
+.container: Changes the flex direction to column so the child elements stack vertically.
+
+.left, .right: Makes both columns take up full width and removes the flex behavior, forcing them to stack.
+
+.output-box: Adjusts the minimum height for the output box to ensure it's not too large on small screens.
+
+This should make your layout more mob
+      </textarea>
+    </div>
+  </div>
+
+</body>
+<script>
+  document.querySelector(".output-box").addEventListener("click", (e) => {
+    document.querySelector(".output-box").innerHTML = "sdafhdjskl"
+  })
+</script>
+</html>
