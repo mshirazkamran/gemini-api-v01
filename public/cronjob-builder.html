@@ -10,22 +10,39 @@
     body {
       background-image: url(icons/inverted-bg.svg);
       background-size: 1500px;
-      /* background-color: #000; */
       color: #ccc;
-      font-family: monospace, Seoge UI;
-      height: 100vh;
+      font-family: monospace, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
+      padding: 0;
+      min-height: 100vh;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
+      background-color: black;
+    }
+
+    .page-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin-top: 50px;
+    }
+
+    h1.text {
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-bottom: 30px;
+      margin-top: 140px;
+      font-size: 2.5rem;
+      color: #f3efec;
+      text-align: center;
     }
 
     .container {
       display: flex;
-      width: 100%;
-      margin-left: 50px;
-      margin-top: 200px;
-      margin-right: 50px;
+      width: 90%;
+      max-width: 1200px;
       background-image: linear-gradient(to right, #250f0f, #1a0d13);
       padding: 32px;
       border-radius: 10px;
@@ -57,20 +74,21 @@
       border-color: #ff851b;
     }
 
-    button {
-      margin-top: 1rem;
-      padding: 0.8rem;
-      background-color: #ff851b;
-      color: #000;
-      font-size: 1rem;
-      border: none;
+    .scrollBtn {
+      background-image: linear-gradient(to right, #5b1c1c, #242020);
       border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s;
+      color: #cccccc;
+      width: 180px;
+      height: 70px;
+      font-size: 26px;
+      font-weight: 700;
+      transition: background-image 0.5s ease, transform 0.3s ease, box-shadow 0.2s;
     }
 
-    button:hover {
-      background-color: #ff7700;
+    .scrollBtn:hover {
+      transform: translateY(-8px);
+      background-image: linear-gradient(to left, #957777, #ad1717);
+      color: #0a0a0a;
     }
 
     .output-box {
@@ -87,7 +105,7 @@
     @media screen and (max-width: 768px) {
       .container {
         flex-direction: column;
-        margin-top: 50px;
+        margin-top: 20px;
       }
 
       .left,
@@ -106,31 +124,30 @@
 
 <body>
 
-  <div class="container">
-    <div class="left">
-      <textarea placeholder="Enter your input here..."></textarea>
-      <button>Submit</button>
-    </div>
+  <div class="page-wrapper">
+    <h1 class="text">Devotol - Cronjob Builder</h1>
+    <div class="container">
+      <div class="left">
+        <textarea placeholder="Enter your prompt here, even a few words will work..."></textarea>
+        <button class="submitButton">Submit</button>
+      </div>
 
-    <div class="right">
-      <textarea readonly id="" class="output-box">
-        ax-width: 768px: This media query will trigger when the screen width is 768px or less (which is common for tablets and mobile devices).
-
-.container: Changes the flex direction to column so the child elements stack vertically.
-
-.left, .right: Makes both columns take up full width and removes the flex behavior, forcing them to stack.
-
-.output-box: Adjusts the minimum height for the output box to ensure it's not too large on small screens.
-
-This should make your layout more mob
-      </textarea>
+      <div class="right">
+        <textarea readonly class="output-box">
+          Output will appear here...
+        </textarea>
+      </div>
     </div>
   </div>
 
 </body>
+
+</html>
+
 <script>
   document.querySelector(".output-box").addEventListener("click", (e) => {
     document.querySelector(".output-box").innerHTML = "sdafhdjskl"
   })
 </script>
+
 </html>
