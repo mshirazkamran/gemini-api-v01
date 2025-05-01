@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "@google/genai": "^0.10.0"
+    "@google/genai": "^0.10.0",
+    "markdown-it": "^14.1.0"
   }
 }
