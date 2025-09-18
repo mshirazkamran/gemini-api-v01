@@ -20,7 +20,7 @@
       </div>
 
       <div class="right">
-        <textarea readonly class="output-box">Output will appear here...</textarea>
+        <div class="output-box">Output will appear here...</div>
       </div>
     </div>
   </div>
@@ -28,6 +28,7 @@
 </body>
 
 </html>
+<script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
 
 <script>
 
@@ -79,11 +80,15 @@
     const prompt = intro + ", " + input;
 
 
+    const md = window.markdownit();
+
     async function getAnswerAndUpdateDOM(realAnswer) {
-      document.querySelector(".output-box").value = "Working...";
+      document.querySelector(".output-box").innerHTML = "<em>Working...</em>";
       const answerMilGya = await getGeminiResponse(realAnswer);
-      // console.log(answerMilGya);
-      document.querySelector(".output-box").value = answerMilGya;
+
+      const rendered = md.render(answerMilGya);
+
+      document.querySelector(".output-box").innerHTML = rendered;
     }
 
     getAnswerAndUpdateDOM(prompt);

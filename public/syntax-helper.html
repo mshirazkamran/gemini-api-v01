@@ -88,10 +88,8 @@
       document.querySelector(".output-box").innerHTML = "<em>Working...</em>";
       const answerMilGya = await getGeminiResponse(realAnswer);
 
-      // render with markdown-it
       const rendered = md.render(answerMilGya);
 
-      // inject the rendered HTML
       document.querySelector(".output-box").innerHTML = rendered;
     }
 
