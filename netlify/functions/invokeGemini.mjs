@@ -9,11 +9,11 @@ export default async (req, context) => {
 
         // Allowed commands
         const allowedCommands = [
-            "answer in normal text, no md formatting. please answer in the shortest way with a little explanation only if the prompt below is realted to cronjob",
-            "answer in normal text, no md formatting. please check the programming language and give me the name of the programming language which this is",
-            "answer in normal text, no md formatting. please give me the method details, its return type and params if any ,also give a sample example. and keep the answer concise",
-            "answer in normal text, no md formatting. please provide me with all the details of the object in the said programming language",
-            "answer in normal text, no md formatting. please correct the syntax if it has issues and also give a very short info about where it is wrong",
+            "__answer in normal text, no md formatting. please answer in the shortest way with a little explanation only if the prompt below is realted to cronjob__",
+            "__answer in normal text, no md formatting. please check the programming language and give me the name of the programming language which this is__",
+            "__answer in normal text, no md formatting. please give me the method details, its return type and params if any ,also give a sample example. and keep the answer concise__",
+            "__answer in normal text, no md formatting. please provide me with all the details of the object in the said programming language__",
+            "__answer in normal text, no md formatting. please correct the syntax if it has issues and also give a very short info about where it is wrong__",
         ];
 
         const body = await req.json();
